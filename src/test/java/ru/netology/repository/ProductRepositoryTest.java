@@ -18,15 +18,6 @@ class ProductRepositoryTest {
     private Product product5 = new Smartphone(5, "пятый", 500, "самсунг");
     private Product product6 = new Smartphone(6, "шестой", 600, "сони");
 
-
-    @Test
-    public void shouldSaveOneItem() {
-        repository.save(coreJava);
-
-        Product[] expected = new Product[]{coreJava};
-        Product[] actual = repository.findAll();
-        assertArrayEquals(expected, actual);
-    }
     @BeforeEach
     public void addProduct(){
         manager.add(product1);

@@ -4,7 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.repository.ProductRepository;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class ProductManagerTest {
 
@@ -65,7 +65,7 @@ class ProductManagerTest {
     @Test
     public void shouldSearchBookAndSmartphoneByName() {
         Product[] actual = manager.searchBy("пятый");
-        Product[] expected = new Product[]{product2,product5};
+        Product[] expected = new Product[]{product2, product5};
         assertArrayEquals(actual, expected);
     }
 }

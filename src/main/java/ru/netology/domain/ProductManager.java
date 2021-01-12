@@ -25,12 +25,12 @@ public class ProductManager {
             }
             return false;
         }
-        if(product instanceof Smartphone) {
+        if (product instanceof Smartphone) {
             Smartphone smartphone = (Smartphone) product;
             if (smartphone.getName().equalsIgnoreCase(search)) {
                 return true;
             }
-            if(smartphone.getProduce().equalsIgnoreCase(search)){
+            if (smartphone.getProduce().equalsIgnoreCase(search)) {
                 return true;
             }
         }
@@ -39,10 +39,10 @@ public class ProductManager {
 
     public Product[] searchBy(String text) {
         Product[] result = new Product[0];
-        for (Product product : repository.findAll()){
-            if(matches(product,text)){
+        for (Product product : repository.findAll()) {
+            if (matches(product, text)) {
                 Product[] tmp = new Product[result.length + 1];
-                System.arraycopy(result,0,tmp,0,result.length);
+                System.arraycopy(result, 0, tmp, 0, result.length);
                 tmp[tmp.length - 1] = product;
                 result = tmp;
             }

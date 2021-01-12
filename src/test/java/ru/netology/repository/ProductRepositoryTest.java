@@ -19,7 +19,7 @@ class ProductRepositoryTest {
     private Product product6 = new Smartphone(6, "шестой", 600, "сони");
 
     @BeforeEach
-    public void addProduct(){
+    public void addProduct() {
         manager.add(product1);
         manager.add(product2);
         manager.add(product3);
@@ -33,13 +33,13 @@ class ProductRepositoryTest {
         int deleteId = 3;
         repository.removeById(deleteId);
         Product[] actual = repository.findAll();
-        Product[] expected = new Product[]{product1,product2,product4,product5,product6};
-        assertArrayEquals(actual,expected);
+        Product[] expected = new Product[]{product1, product2, product4, product5, product6};
+        assertArrayEquals(actual, expected);
     }
 
     @Test
-    public void shouldRemoveProductByNotExistId(){
+    public void shouldRemoveProductByNotExistId() {
         int idRemove = 8;
-        assertThrows(NotFoundException.class,()-> repository.removeById(idRemove));
+        assertThrows(NotFoundException.class, () -> repository.removeById(idRemove));
     }
 }
